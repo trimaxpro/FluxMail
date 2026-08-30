@@ -1,0 +1,263 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Design System - Black & White Theme */
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Eye-Comfortable */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 12%;
+    
+    /* Surface Colors */
+    --card: 0 0% 97%;
+    --card-foreground: 0 0% 15%;
+    
+    /* Interactive Elements */
+    --primary: 0 0% 18%;
+    --primary-foreground: 0 0% 92%;
+    
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 20%;
+    
+    /* Semantic Colors */
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 48%;
+    
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 20%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Borders & Inputs */
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 18%;
+    
+    /* Component Radius */
+    --radius: 0.75rem;
+    
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 18%) 0%, hsl(0 0% 28%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 97%) 0%, hsl(0 0% 94%) 100%);
+    
+    /* Shadows */
+    --shadow-premium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  .dark {
+    /* Dark Mode Colors - Eye-Comfortable */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 92%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 90%;
+    
+    --primary: 0 0% 90%;
+    --primary-foreground: 0 0% 12%;
+    
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 88%;
+    
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 88%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 75%;
+    
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 90%) 0%, hsl(0 0% 80%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(0 0% 14%) 100%);
+    
+    /* Dark Shadows */
+    --shadow-premium: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-ubuntu antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* Premium Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-lato font-bold tracking-tight leading-tight;
+  }
+  
+  h1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+
+  /* Improved text readability */
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Premium Button Variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 
+           shadow-lg hover:shadow-xl transition-all duration-300 
+           px-8 py-3 rounded-lg font-medium;
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-accent hover:text-accent-foreground
+           transition-colors duration-200 px-4 py-2 rounded-md;
+  }
+  
+  /* Premium Cards */
+  .card-premium {
+    @apply bg-card border rounded-xl shadow-md 
+           hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  /* Email Item Styles */
+  .email-item {
+    @apply p-4 border-b border-border hover:bg-muted/50 
+           transition-colors duration-200 cursor-pointer;
+  }
+
+  /* Email Content Body - keep long emails inside their container */
+  .email-content-body {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .email-content-body img,
+  .email-content-body video,
+  .email-content-body iframe,
+  .email-content-body audio,
+  .email-content-body svg,
+  .email-content-body canvas {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  .email-content-body pre,
+  .email-content-body code {
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .email-content-body a {
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+
+  .email-content-body table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: normal;
+  }
+
+  .email-content-body iframe {
+    pointer-events: none;
+  }
+  
+  /* Status Indicators */
+  .status-active {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full 
+           bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400
+           text-sm font-medium;
+  }
+  
+  .status-expired {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full 
+           bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400
+           text-sm font-medium;
+  }
+}
+
+@layer utilities {
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+}
+
+/* Premium Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground;
+}
